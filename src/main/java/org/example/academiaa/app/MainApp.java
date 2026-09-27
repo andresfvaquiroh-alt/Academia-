@@ -34,7 +34,7 @@ public class MainApp extends Application {
         Academia academia = Academia.obtenerInstancia();
         DatosDemo.cargarSiVacio(academia);
 
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/example/academiaa/view/main-view.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/main-view.fxml"));
         Parent root = loader.load();
 
         stage.setTitle("LenguajeCafetero - Sistema de Gestión Académica");
