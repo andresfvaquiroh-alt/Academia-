@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="16" xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="org.example.academiaa.controller.ConsultaController">
+    <padding>
+        <Insets top="12" right="16" bottom="12" left="16"/>
+    </padding>
+
+    <Label text="Buscar estudiante por documento de identidad" styleClass="subtitulo"/>
+    <HBox spacing="8">
+        <TextField fx:id="txtDocumentoBuscar" promptText="Documento de identidad" prefWidth="220"/>
+        <Button text="Buscar" onAction="#buscarEstudiante"/>
+    </HBox>
+    <Label fx:id="lblResultadoBusqueda"/>
+
+    <Separator/>
+
+    <Label text="Ingresos generados por matrículas en un periodo" styleClass="subtitulo"/>
+    <HBox spacing="8">
+        <Label text="Desde:"/>
+        <DatePicker fx:id="dpDesde"/>
+        <Label text="Hasta:"/>
+        <DatePicker fx:id="dpHasta"/>
+        <Button text="Calcular ingresos" onAction="#calcularIngresos"/>
+    </HBox>
+    <Label fx:id="lblIngresos" styleClass="subtitulo"/>
+</VBox>

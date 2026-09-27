@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="10" xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="org.example.academiaa.controller.ProfesorController">
+    <padding>
+        <Insets top="12" right="16" bottom="12" left="16"/>
+    </padding>
+
+    <Label text="Registrar profesor" styleClass="subtitulo"/>
+    <GridPane hgap="8" vgap="8">
+        <columnConstraints>
+            <ColumnConstraints minWidth="140"/>
+            <ColumnConstraints minWidth="220"/>
+            <ColumnConstraints minWidth="140"/>
+            <ColumnConstraints minWidth="220"/>
+        </columnConstraints>
+
+        <Label text="Identificación:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+        <TextField fx:id="txtIdentificacion" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+        <Label text="Nombre:" GridPane.rowIndex="0" GridPane.columnIndex="2"/>
+        <TextField fx:id="txtNombre" GridPane.rowIndex="0" GridPane.columnIndex="3"/>
+
+        <Label text="Idioma que enseña:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+        <TextField fx:id="txtIdioma" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+        <Label text="Teléfono:" GridPane.rowIndex="1" GridPane.columnIndex="2"/>
+        <TextField fx:id="txtTelefono" GridPane.rowIndex="1" GridPane.columnIndex="3"/>
+
+        <Label text="Tarifa por sesión:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+        <TextField fx:id="txtTarifa" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+    </GridPane>
+
+    <HBox spacing="10">
+        <Button text="Registrar profesor" onAction="#registrarProfesor"/>
+        <Button text="Limpiar" onAction="#limpiarFormulario"/>
+    </HBox>
+    <Label fx:id="lblMensaje"/>
+
+    <Separator/>
+
+    <Label text="Profesores registrados" styleClass="subtitulo"/>
+    <TableView fx:id="tablaProfesores" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="colIdentificacion" text="Identificación" prefWidth="110"/>
+            <TableColumn fx:id="colNombreProfesor" text="Nombre" prefWidth="200"/>
+            <TableColumn fx:id="colIdiomaProfesor" text="Idioma" prefWidth="120"/>
+            <TableColumn fx:id="colTelefonoProfesor" text="Teléfono" prefWidth="110"/>
+            <TableColumn fx:id="colTarifa" text="Tarifa/sesión" prefWidth="100"/>
+        </columns>
+    </TableView>
+</VBox>

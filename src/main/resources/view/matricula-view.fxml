@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="10" xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="org.example.academiaa.controller.MatriculaController">
+    <padding>
+        <Insets top="12" right="16" bottom="12" left="16"/>
+    </padding>
+
+    <Label text="Matricular estudiante (Builder ensambla la Matrícula)" styleClass="subtitulo"/>
+    <GridPane hgap="8" vgap="8">
+        <columnConstraints>
+            <ColumnConstraints minWidth="140"/>
+            <ColumnConstraints minWidth="260"/>
+            <ColumnConstraints minWidth="140"/>
+            <ColumnConstraints minWidth="260"/>
+        </columnConstraints>
+
+        <Label text="Estudiante:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+        <ComboBox fx:id="cbEstudiante" GridPane.rowIndex="0" GridPane.columnIndex="1" prefWidth="260"/>
+
+        <Label text="Curso:" GridPane.rowIndex="0" GridPane.columnIndex="2"/>
+        <ComboBox fx:id="cbCurso" GridPane.rowIndex="0" GridPane.columnIndex="3" prefWidth="260"/>
+
+        <Label text="Profesor (solo personalizado):" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+        <ComboBox fx:id="cbProfesor" GridPane.rowIndex="1" GridPane.columnIndex="1" prefWidth="260"/>
+
+        <Label text="Fecha de matrícula:" GridPane.rowIndex="1" GridPane.columnIndex="2"/>
+        <DatePicker fx:id="dpFecha" GridPane.rowIndex="1" GridPane.columnIndex="3"/>
+
+        <Label text="Descuento (ej. 0.10 = 10%):" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+        <TextField fx:id="txtDescuento" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+    </GridPane>
+
+    <Label text="Servicios adicionales utilizados (Ctrl/Shift + clic para varios):"/>
+    <ListView fx:id="listServicios" prefHeight="90"/>
+
+    <HBox spacing="10">
+        <Button text="Matricular" onAction="#matricular"/>
+        <Button text="Limpiar" onAction="#limpiarFormulario"/>
+    </HBox>
+    <Label fx:id="lblMensaje"/>
+
+    <Separator/>
+
+    <Label text="Matrículas registradas" styleClass="subtitulo"/>
+    <TableView fx:id="tablaMatriculas" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="colEstudianteMat" text="Estudiante" prefWidth="180"/>
+            <TableColumn fx:id="colCursoMat" text="Curso" prefWidth="180"/>
+            <TableColumn fx:id="colProfesorMat" text="Profesor" prefWidth="140"/>
+            <TableColumn fx:id="colFechaMat" text="Fecha" prefWidth="90"/>
+            <TableColumn fx:id="colServiciosMat" text="Servicios" prefWidth="70"/>
+            <TableColumn fx:id="colDescuentoMat" text="Descuento" prefWidth="80"/>
+            <TableColumn fx:id="colValorFinalMat" text="Valor final" prefWidth="100"/>
+        </columns>
+    </TableView>
+</VBox>

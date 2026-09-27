@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="10" xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="org.example.academiaa.controller.ServicioController">
+    <padding>
+        <Insets top="12" right="16" bottom="12" left="16"/>
+    </padding>
+
+    <Label text="Registrar servicio adicional" styleClass="subtitulo"/>
+    <GridPane hgap="8" vgap="8">
+        <columnConstraints>
+            <ColumnConstraints minWidth="140"/>
+            <ColumnConstraints minWidth="220"/>
+            <ColumnConstraints minWidth="140"/>
+            <ColumnConstraints minWidth="220"/>
+        </columnConstraints>
+
+        <Label text="Código:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+        <TextField fx:id="txtCodigo" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+        <Label text="Nombre:" GridPane.rowIndex="0" GridPane.columnIndex="2"/>
+        <TextField fx:id="txtNombre" GridPane.rowIndex="0" GridPane.columnIndex="3"/>
+
+        <Label text="Descripción:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+        <TextField fx:id="txtDescripcion" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+        <Label text="Precio:" GridPane.rowIndex="1" GridPane.columnIndex="2"/>
+        <TextField fx:id="txtPrecio" GridPane.rowIndex="1" GridPane.columnIndex="3"/>
+
+        <Label text="Disponible:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+        <CheckBox fx:id="chkDisponible" GridPane.rowIndex="2" GridPane.columnIndex="1" selected="true"/>
+    </GridPane>
+
+    <HBox spacing="10">
+        <Button text="Registrar servicio" onAction="#registrarServicio"/>
+        <Button text="Limpiar" onAction="#limpiarFormulario"/>
+    </HBox>
+    <Label fx:id="lblMensaje"/>
+
+    <Separator/>
+
+    <Label text="Servicios adicionales registrados" styleClass="subtitulo"/>
+    <TableView fx:id="tablaServicios" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="colCodigo" text="Código" prefWidth="90"/>
+            <TableColumn fx:id="colNombreServicio" text="Nombre" prefWidth="220"/>
+            <TableColumn fx:id="colDescripcion" text="Descripción" prefWidth="220"/>
+            <TableColumn fx:id="colPrecio" text="Precio" prefWidth="100"/>
+            <TableColumn fx:id="colDisponible" text="Disponible" prefWidth="90"/>
+        </columns>
+    </TableView>
+</VBox>

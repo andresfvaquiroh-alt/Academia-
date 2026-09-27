@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            stylesheets="@app.css">
+    <top>
+        <Label text="LenguajeCafetero — Sistema de Gestión Académica" styleClass="titulo-app">
+            <BorderPane.margin>
+                <Insets top="12" right="16" bottom="8" left="16"/>
+            </BorderPane.margin>
+        </Label>
+    </top>
+    <center>
+        <TabPane tabClosingPolicy="UNAVAILABLE">
+            <Tab text="Estudiantes">
+                <fx:include source="estudiante-view.fxml"/>
+            </Tab>
+            <Tab text="Cursos">
+                <fx:include source="curso-view.fxml"/>
+            </Tab>
+            <Tab text="Profesores">
+                <fx:include source="profesor-view.fxml"/>
+            </Tab>
+            <Tab text="Servicios Adicionales">
+                <fx:include source="servicio-view.fxml"/>
+            </Tab>
+            <Tab text="Matrículas">
+                <fx:include source="matricula-view.fxml"/>
+            </Tab>
+            <Tab text="Consultas e Ingresos">
+                <fx:include source="consulta-view.fxml"/>
+            </Tab>
+        </TabPane>
+    </center>
+</BorderPane>
